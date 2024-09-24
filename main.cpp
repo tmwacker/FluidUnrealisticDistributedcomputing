@@ -16,7 +16,7 @@ int main()
   new_sugar = scale * sugar;
   new_butter = scale * butter;
   new_flour = scale * flour;
-  cout << "The ingredients you need for " << amount<< " cookies is: " << endl;
+  cout << "The ingredients you need for " << amount<< " cookies is: " << endl; //Displaying info to user
   cout << "Sugar: " <<new_sugar<< " cups"<< endl; 
   cout << "Flour: " <<new_flour<< " cups"<< endl; 
   cout << "Butter: " <<new_butter<< " cups"<< endl;
