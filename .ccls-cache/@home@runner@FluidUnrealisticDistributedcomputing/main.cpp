@@ -1,25 +1,25 @@
 #include <iostream>
+#include <cmath>// needed for pow
+#include <iomanip> // needed for setprecision
 using namespace std;
-
 int main() 
 {
-
-  const int original_cookies = 48; // declaring constant variables
-  const double sugar = 1.5;  
-  const double butter = 1.0;  
-  const double flour = 2.75;
-
-  double amount, scale, new_sugar,new_butter,new_flour; 
-  cout << "How many cookies do you want to make? ";
-  cin >> amount; 
-  scale = amount/original_cookies; // Determines the scale factor based on the amount of cookies
-  new_sugar = scale * sugar;
-  new_butter = scale * butter;
-  new_flour = scale * flour;
-  cout << "The ingredients you need for " << amount<< " cookies is: " << endl; //Displaying info to user
-  cout << "Sugar: " <<new_sugar<< " cups"<< endl; 
-  cout << "Flour: " <<new_flour<< " cups"<< endl; 
-  cout << "Butter: " <<new_butter<< " cups"<< endl;
+  double  amount, principal, compound, interest_rate, interest_earned; // declare variables
   
+  cout <<"What is the principal of the account? " << endl; // get user info
+  cin >> principal;
+  cout <<"What is the interest rate of the account? " << endl;
+  cin >> interest_rate;
+  cout <<"How many times will the interest be compounded? " << endl;
+  cin >> compound;
   
-    }
+  amount =  principal * pow((1 + (interest_rate / 100) / compound), compound);// doing math for interest and amount
+  interest_earned= amount - principal;
+  
+  cout << fixed << setprecision(2);// fix the number to two decimal places
+    cout << "Interest Rate: " << interest_rate << "%" << endl; // display results to user
+    cout << "Times Compounded: " << compound << endl;
+    cout << "Principal: $" << principal << endl;
+    cout << "Interest Earned: $" << interest_earned << endl;
+    cout << "Total Amount: $" << amount << endl;
+} 
